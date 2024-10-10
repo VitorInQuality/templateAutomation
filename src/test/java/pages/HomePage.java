@@ -7,17 +7,18 @@ import metodos.Metodos;
 public class HomePage {
 
 	Metodos metodo = new Metodos();
-	private By btnLogin = By.xpath("//button[@class='login-button']");
-	private By btnAbrirConta = By.xpath("//button[@class='open-account-button']");
 
-	public void acessarMenu(String menu) {
-		if (menu.equalsIgnoreCase("Login")) {
-			metodo.clicar(btnLogin);
-		} else if (menu.equalsIgnoreCase("Abrir conta")) {
-			metodo.clicar(btnAbrirConta);
-		} else {
-			System.out.println("Informar o menju Login ou Abrir conta");
-		}
+	By btnHomeBroker = By.xpath("//ul//li[1]//a");
+	By btnformulario = By.xpath("//ul//li[2]//a");
+
+	public void acessarHomeBroker() {
+		metodo.clicar(btnHomeBroker);
+
+	}
+
+	public void acessarFormulario() {
+		metodo.clicar(btnformulario);
+
 	}
 
 }

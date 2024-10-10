@@ -1,20 +1,22 @@
 package runner;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import drivers.Drivers;
 
 public class Executa extends Drivers {
 
 	public static void iniciarTeste() {
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--headless");
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.get("http://52.2.114.98/");
+		driver.get("https://desafio.ui.e2etreinamentos.com.br/");
 	}
 
 	public static void finalizarTeste() {
 		driver.quit();
-
 	}
 
 }
